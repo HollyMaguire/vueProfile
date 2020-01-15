@@ -1,8 +1,16 @@
 <template>
 <v-app id="luckApp">
 <div>
-  <div class="betinfo"> Starting Bet: <input v-model.number="wallet"/></div>
+  <div class="betinfo"> Type in your Starting Bet:<input background-color="red" v-model.number="wallet"></div>
+
 <div align="center"> <v-btn color="green" @click="playGame()"> click here to start playing lucky sevens</v-btn>
+
+</div>
+<div v-if="!gameStarted">
+
+<p>Lucky sevens is a game where each bet costs 1 dollar and if you roll 7 you gain 4 dollars. </p>
+<p>After giving a starting bet the game is played until the player goes broke. </p>
+
 
 </div>
 <div id="gameResults">{{this.maxi.cash}}|{{this.maxi.turn}}</div>
@@ -80,6 +88,8 @@ export default {
 
 <style scoped>
 
+
+
 h1 {font-size: 2.5em;
 text-align:center;}
 
@@ -92,7 +102,8 @@ text-align:center;}
     width:40%;
     left:30%;
 }
-.betinfo {text-align:center}
+.betinfo {text-align:center;
+}
 v-app{background-color:lightgreen}
 
 </style>

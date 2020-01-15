@@ -1,7 +1,8 @@
 <template>
 <v-app  id="countingApp">
   <div>
-      Enter your word:<v-text-field v-model="word">rtj
+      Enter your word in the box below:<v-text-field
+              outlined v-model="word">rtj
       </v-text-field>
       </div>
       <div>

@@ -1,8 +1,8 @@
 <template>
 <v-app id="MaxApp">
   <div>
-      <div> input a list of numbers seperated by spaces</div>
-      <v-text-field v-model="inputStr"></v-text-field>
+      <div> In the box below;input a list of numbers seperated by spaces,</div>
+      <v-text-field outlined v-model="inputStr"></v-text-field>
       <div> {{arrayOfInts}}</div>
       <div>the max is {{theMax}}</div>
 
