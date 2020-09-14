@@ -6,51 +6,78 @@
     
      </div>
     <div class="row">
-        <card @click = "cardsClicked()" backImg = "card" faceImg='d1'></card>
-        <card @click = "cardsClicked()" backImg = "card" faceImg='d0'></card>
-        <card @click = "cardsClicked()" backImg = "card" faceImg='d3'></card>
-        <card @click = "cardsClicked()" backImg = "card" faceImg='d4'></card>
-        <card @click = "cardsClicked()" backImg = "card" faceImg='d5'></card>
-        <card @click = "cardsClicked()" backImg = "card" faceImg='d6'></card>   
+        <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[0]' :clicked = 'click'></card>
+        <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[1]' :clicked = 'click'></card>
+        <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[2]' :clicked = 'click'></card>
+        <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[3]' :clicked = 'click'></card>
+        <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[4]' :clicked = 'click'></card>
+        <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[5]' :clicked = 'click'></card>   
 </div>
  <div class="row">
-    <card @click = "cardsClicked()" backImg = "card" faceImg='d7'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d3'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d0'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d2'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d4'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d5'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[6]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[7]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[8]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[9]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[10]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[11]' :clicked = 'click'></card>
 </div>
 <div class="row">
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d1'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d2'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d6'></card>
-    <card @clicked = "cardsClicked()" backImg = "card" faceImg='d7'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[12]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[13]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[14]' :clicked = 'click'></card>
+    <card @isClicked = "cardsClicked" backImg = "card" :faceImg='randomArray[15]' :clicked = 'click'></card>
 </div>
    
     </v-app>
 </template>
 <script>
 import card from "../components/Card"
+import { EventBus } from '../components/eventBus.js';
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+
 export default {
+    created() {
+        shuffleArray(this.randomArray)
+
+    },
+
     el: '#Memory',
     methods: {
-        cardsClicked(){//card is a string representing the name of the card 
-        // eslint-disable-next-line no-console
-                    console.log('THERE IS A MATCH');
-            // this.clickedArray.push(name);
-            // if(this.clickArray.length == 2){
-            //     if(this.clickedArray[0] == this.clickedArray[1]){
-            //         // eslint-disable-next-line no-console
-            //         console.log('THERE IS A MATCH');
-            //     }
-            //     else {
-            //         // eslint-disable-next-line no-console
-            //         console.log('THERE IS NO MATCH')
-            //     }
-            //     this.clickedArray = [];
-            // }
-        }},
+        cardsClicked(name){
+             this.clickedArray.push(name);
+             
+             if (this.clickedArray.length >= 2){
+                if (this.clickedArray[0] == this.clickedArray[1]){
+                    this.match(name)
+                    EventBus.$emit('doubleClick', name)
+                    
+                }
+                else {
+                    this.noMatch(name)
+                    EventBus.$emit('doubleClick', null);
+                }
+                
+                this.clickedArray = []
+              
+             }
+        },
+        match(name){
+this.results = `there is a match ${name}`
+        },
+        noMatch(name){
+this.results = `there is not a match  ${name}`
+        },
+        
+        },
         
 
  components: {
@@ -60,7 +87,11 @@ export default {
   
     data () 
     { return{
-        clickedArray: [],
+            click: false,
+            results: '',
+            clickedArray: [],
+            randomArray: ["d0","d0","d1","d1","d2","d2","d3","d3","d4","d4","d5","d5","d6","d6","d7","d7"],
+            
             Cards: [
                  {
                     name: 'd0',
