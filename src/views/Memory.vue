@@ -152,6 +152,7 @@ this.results = `there is not a match  ${name}`
 }
 
 
-#Memory {background-color:rgb(121, 241, 235)
+#Memory {background: rgb(75,240,252);
+background: radial-gradient(circle, rgba(75,240,252,1) 0%, rgba(115,190,218,1) 35%);
 }
 </style>

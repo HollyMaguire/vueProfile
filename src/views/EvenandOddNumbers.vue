@@ -30,7 +30,8 @@
 
 <style scoped>
 #NumbersApp {
-    background-color:lightsalmon
+    background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(233,186,148,1) 100%);
 }
 
 </style>

@@ -113,6 +113,7 @@ text-align:center;
 }
 
 text {font-size: large;}
-#rockPaperScissors {background-color:rgba(255, 255, 128, .5);;}
+#rockPaperScissors {background: rgb(136,128,56);
+background: linear-gradient(90deg, rgba(136,128,56,0.9251050762101716) 29%, rgba(212,189,2,1) 100%);}
 
 </style>

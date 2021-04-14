@@ -31,6 +31,7 @@ export default {
 
 <style scoped>
 
-#countingApp {background-color:rgb(121, 241, 235)
+#countingApp {background: rgb(5,168,163);
+background: linear-gradient(0deg, rgba(5,168,163,1) 0%, rgba(69,195,143,1) 30%, rgba(96,231,213,1) 51%);
 }
 </style>

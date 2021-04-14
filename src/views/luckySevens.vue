@@ -93,7 +93,8 @@ export default {
 h1 {font-size: 2.5em;
 text-align:center;}
 
-#luckApp {background-color: lightgreen;}
+#luckApp {background: rgb(140,247,203);
+background: linear-gradient(90deg, rgba(140,247,203,0.9251050762101716) 29%, rgba(80,236,106,1) 100%);}
 
 #gameResults{  border: 1px solid #0d1f2d;
     border-collapse: collapse;
@@ -104,6 +105,7 @@ text-align:center;}
 }
 .betinfo {text-align:center;
 }
-v-app{background-color:lightgreen}
+v-app{background: rgb(140,247,203);
+background: linear-gradient(90deg, rgba(140,247,203,0.9251050762101716) 29%, rgba(80,236,106,1) 100%);}
 
 </style>

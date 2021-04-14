@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import dice from './views/dice.vue'
 import EvenandOddNumbers from './views/EvenandOddNumbers.vue'
 import countingCharacters from './views/countingCharacters.vue'
+//import EtchASketch from './views/EtchASketch.vue'
 import findMax from './views/findMax.vue'
 import profile from './views/profile.vue'
 import viewsMousetracking from './views/Mousetracking.vue'
@@ -34,6 +35,11 @@ export default new Router({
       name: 'luckySevens',
       component: luckySevens
     },
+    // {
+    //   path: '/EtchASketch',
+    //   name: 'EtchASketch',
+    //   component: EtchASketch
+    // },
     {
       path: '/viewsMousetracking',
       name: 'viewsMousetracking',

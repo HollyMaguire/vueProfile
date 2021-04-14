@@ -5,6 +5,7 @@ import dice from './views/dice.vue'
 import EvenandOddNumbers from './views/EvenandOddNumbers.vue'
 import rockPaperScissors from './views/rockPaperScissors.vue'
 import countingCharacters from './views/countingCharacters.vue'
+// import EtchASketch from './views/EtchASketch.vue'
 //import TicTacToe from './views/TicTacToe.vue'
 import findMax from './views/findMax.vue'
 import profile from './views/profile.vue'
@@ -13,6 +14,7 @@ import luckySevens from './views/luckySevens.vue'
 import restaurant from './views/restaurant.vue'
 import Menu from './views/Menu.vue'
 import Contact from './views/Contact.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -52,7 +54,11 @@ export default new Router({
       name: 'rockPaperScissors',
       component: rockPaperScissors
     },
-    
+    // {
+    //   path: '/etchASketch',
+    //   name: 'EtchASketch',
+    //   component: EtchASketch
+    // },
     {
       path: '/',
       name: 'profile',
