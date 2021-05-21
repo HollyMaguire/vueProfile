@@ -5,8 +5,6 @@
       <v-text-field outlined v-model="inputStr"></v-text-field>
       <div> {{arrayOfInts}}</div>
       <div>the max is {{theMax}}</div>
-
-
   </div>
   </v-app>
 </template>

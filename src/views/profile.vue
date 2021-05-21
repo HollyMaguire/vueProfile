@@ -1,5 +1,5 @@
 <template>
-  <v-app id="mainPage">
+  <v-app id="profile">
      <v-container>
                   <p>
                       <p class="h1"><strong>About Me <a href="https://github.com/HollyMaguire"> Link to My Git Hub</a></strong ></p> 
